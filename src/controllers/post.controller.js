@@ -21,3 +21,41 @@ export const createPost = async (req, res) => {
     res.status(500).send("Error al crear el post");
   }
 };
+
+export const updatePostById = async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const { titulo, contenido, img_url } = req.body;
+    const post = await Post.findByPk(postId);
+    if (!post) {
+      return res
+        .status(404)
+        .json({ error: "La publicación no fue encontrada" });
+    }
+    post.titulo = titulo;
+    post.contenido = contenido;
+    post.img_url = img_url;
+    await post.save();
+    res.status(200).json({ message: "Publicación actualizada con éxito" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error al actualizar la publicación" });
+  }
+};
+
+export const deletePostById = async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const post = await Post.findByPk(postId);
+    if (!post) {
+      return res
+        .status(404)
+        .json({ error: "La publicación no fue encontrada" });
+    }
+    await post.destroy();
+    return res.status(200).json({ message: "post eliminado correctamente" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error al eliminar la publicación" });
+  }
+};
