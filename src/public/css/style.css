@@ -1,17 +1,58 @@
+/* Estilo para el cuerpo de la página */
+body {
+  font-family: Arial, sans-serif; /* Elije una fuente legible */
+  background-color: #f8f8f8; /* Un color de fondo agradable */
+  overflow: hidden;
+}
+
+/* Estilo para el encabezado */
 header {
-  background-size: cover;
+  
+  background-size: 100% auto; /* Ajusta el tamaño de la imagen */
   background-repeat: no-repeat;
-  background-position: top; /* Alinea la imagen en la parte superior del contenedor */
-  padding: 100px 0; /* Ajusta el espaciado superior e inferior según sea necesario */
+  background-position: center; /* Alinea la imagen en el centro superior del contenedor */
+  padding: 100px 0; /* Espaciado superior e inferior aumentado para una apariencia más impactante */
+  color: #111111; /* Texto en color blanco para contrastar con el fondo */
+  text-align: center; /* Alinea el texto al centro */
+  position: relative;
 }
-.img-fluid{
+
+/* Estilo para la imagen */
+.img-fluid {
   max-width: 50%;
+  height: auto;
+  position: relative; /* Establece la posición en absoluta para la imagen */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 100%; /* Ocupa todo el alto del contenedor */
+  z-index: 0; /* Asegura que la imagen esté detrás del contenido */
+}
+
+/* Estilo para la barra de navegación */
+.navbar {
+  background-color: #343a40; /* Color de fondo de la barra de navegación */
+}
+
+.navbar-nav .nav-link {
+  color: #fff; /* Color del texto del enlace en la barra de navegación */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f8f8; /* Cambia el color del texto del enlace al pasar el cursor por encima */
+}
+
+/* Estilo para el título principal */
+.display-4 {
+  font-size: 1.8rem; /* Tamaño de fuente más grande para el título principal */
+ 
+
+}
+.titulo {
+   /* Tamaño de fuente más grande para el título principal */
+  color: #f8f8f8;
+  text-align: right;
+  
 }
 
 
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-
-}
