@@ -1,0 +1,17 @@
+header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top; /* Alinea la imagen en la parte superior del contenedor */
+  padding: 100px 0; /* Ajusta el espaciado superior e inferior según sea necesario */
+}
+.img-fluid{
+  max-width: 50%;
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+}

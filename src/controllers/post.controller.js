@@ -1,5 +1,19 @@
 import Post from "../models/post.js";
 
+export const ctrlViewHome = async (req, res) => {
+  res.render("home.ejs");
+};
+
+export const ctrlView = async (req, res) => {
+  try {
+    const posts = await Post.findAll(); // Recupera todas las publicaciones desde la base de datos
+    res.render("index.ejs", { posts }); // Renderiza la vista de publicaciones
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error al obtener los posts");
+  }
+};
+
 export const getAll = async (req, res) => {
   try {
     const post = await Post.findAll(); // Recupera todas las publicaciones desde la base de datos

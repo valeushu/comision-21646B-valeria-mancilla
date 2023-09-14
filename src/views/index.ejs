@@ -1,0 +1,64 @@
+<%- include("partials/header") -%>
+
+<header class="d-flex justify-content-center">
+  <h1>post</h1>
+</header>
+  <main class="d-flex flex-column align-items-center">
+    <button type="button" class="btn btn-primary" id="btn-newPost" data-bs-toggle="modal">New post</button>
+    <div class="container text-center">
+      <div class="row"id="container-row">
+        
+        <%  posts.forEach(post =>{ %>
+          <article class="col-4 d-flex justify-content-center mb-3" data-id="<%= post.id%>">
+            <div class="card" style="width: 18rem;">
+              <img src="<%= post.img_url%>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><%= post.titulo%></h5>
+                <p class="card-text"><%= post.contenido%></p>
+                <div>
+                  <button href="#" class="btn btn-secondary" id="btn-edit">edit</button>
+                  <button href="#" class="btn btn-danger" id="btn-delete">delete</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        <% }) %>
+
+      </div>
+    </div>
+    <!-- modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Post</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formulario">
+              <div class="mb-3">
+                <label for="input-titulo" class="col-form-label">Titulo:</label>
+                <input type="text" class="form-control" id="input-titulo">
+              </div>
+              <div class="mb-3">
+                <label for="input-contenido" class="col-form-label">Contenido:</label>
+                <input type="text" class="form-control" id="input-contenido">
+              </div>
+              <div class="mb-3">
+                <label for="input-img" class="col-form-label">URL Imagen:</label>
+                <input type="url" class="form-control" id="input-img">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" id="btn-save"></button>
+              </div>
+             
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+<%- include("partials/footer") -%>
