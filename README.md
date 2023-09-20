@@ -9,4 +9,4 @@ Definir puerto en el archivo .env
 Para ejecutarlo "npm run dev" 
 luego en el navegador desde [Servidor local](http://localhost:3000)
 
-
+![main](markdown/screencapture-localhost-3000-2023-09-19-20_07_17.png)
